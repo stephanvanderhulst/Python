@@ -45,3 +45,16 @@ output = ""
 for ch in phone:
     output += digits_mapping.get(ch, "!") + " "
 print(output)
+
+#convert stuff to emojis
+message = input(">")
+words = message.split(' ')
+emojis = {
+    ":)":  "\U0001F600",
+    ":D": "\U0001F603",
+    ":(": "Don't be a sad cunt"
+}
+output = ""
+for word in words:
+    output += emojis.get(word, word) + " "
+print(output)
