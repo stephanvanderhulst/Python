@@ -29,3 +29,32 @@ def verifyPrime(candidate):
 
 verifyPrime(11233)
 verifyPrime(33216)
+
+
+def fibonacciSequence():
+    example = [1,1,2,3,5,8,13,21,34,55,89,144,233]
+    print(f'Fibonacci sequence: {example}')
+
+
+fibonacciSequence()
+
+
+# def maximumSubarrayProblem():
+#     the_array = [1,-3,2,1,-1]
+#     maxSubarray loop door array vanaf begin
+#     loop for array length
+#         possibleMax += [i]
+#         if possibleMax < 1 (waar we eigenlijk mee starten)
+#             nieuwe poging possibleMax = 0
+#         is huidig totaal het hoogste wat we ooit hebben gehaald?
+#         alltimehigh
+#             if (possibleMax > allTimeHigh):
+#                 allTimeHigh = possibleMax
+#                 hoe gaan we start en eind positie vinden?
+#         3 return values: startposition, endposition en maxcount
+#
+# python libraries
+#     numpy
+#     pandas
+#     matplotlib
+#     scikit-learn
