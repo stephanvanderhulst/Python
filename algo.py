@@ -58,3 +58,18 @@ fibonacciSequence()
 #     pandas
 #     matplotlib
 #     scikit-learn
+
+
+#FizzBuzz cleaner method that can easily be expanded
+def fizz_buzz(game_length):
+        for i in range(game_length):
+                output = ""
+
+                if(i % 3 == 0): output += "Fizz"
+                if(i % 5 == 0): output += "Buzz"
+                if(output == ""): output = i + 1
+
+                print(output)
+
+
+fizz_buzz(30)
