@@ -11,8 +11,8 @@ def decimalToBinary(decimal):
         print(binary)
 
 
-decimalToBinary(1218)
-print(bin(1218))
+#decimalToBinary(1218)
+#print(bin(1218))
 
 #Test a number to see if it is a prime number
 def verifyPrime(candidate):
@@ -27,16 +27,23 @@ def verifyPrime(candidate):
     print(f'{candidate} IS a prime number because it could not be divided by any number from 2 to {upper_bound}')
 
 
-verifyPrime(11233)
-verifyPrime(33216)
+#verifyPrime(11233)
+#verifyPrime(33216)
 
 
-def fibonacciSequence():
+def fibonacciSequence(sequence_length):
     example = [1,1,2,3,5,8,13,21,34,55,89,144,233]
-    print(f'Fibonacci sequence: {example}')
+    print(f'{example} is our test sequence')
+    fibonacci = []
+    for x in range(0, sequence_length):
+        if len(fibonacci) < 2:
+            fibonacci.append(1)
+        else:
+            fibonacci.append(fibonacci[x-1] + fibonacci[x-2])
+    print(fibonacci)
 
 
-fibonacciSequence()
+fibonacciSequence(23)
 
 
 # def maximumSubarrayProblem():
@@ -72,4 +79,4 @@ def fizz_buzz(game_length):
                 print(output)
 
 
-fizz_buzz(30)
+#fizz_buzz(30)
