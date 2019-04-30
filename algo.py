@@ -40,8 +40,54 @@ def fibonacciSequence(sequence_length):
             fibonacci.append(fibonacci[x-1] + fibonacci[x-2])
     print(fibonacci)
 
-print('[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233] is our test sequence')
-fibonacciSequence(23)
+#print('[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233] is our test sequence')
+#fibonacciSequence(23)
+
+
+#Find count of an element in a sorted list: O(n) solution
+def findElementCount(sorted_list, element):
+    count = 0
+    for step in sorted_list:
+        if step == element:
+            count += 1
+        elif step > element: #making it a little bit faster
+            break
+    print(count)
+
+
+#findElementCount([1,1,3,3,5,5,5,5,5,9,9,11], 5)
+
+
+def middleOfList(list):
+    return math.floor(len(list)/2)
+
+#now lets use binary search to find first occurence of element in the sorted list
+def findAnyOccurence(sorted_list, element):
+    print(sorted_list)
+    midway = middleOfList(sorted_list)
+    while sorted_list[midway] != element:
+        if sorted_list[midway] > element:
+            print(f'any occurence of {element} is to the left of position {sorted_list[midway]} in the list')
+            #delete the right half of the list
+            del(sorted_list[midway:])
+            print(f'Deleted the right half of the list, new list is: {sorted_list}')
+            #find the new midway
+            midway = middleOfList(sorted_list)
+        elif len(sorted_list) == 1:
+            print(f'Element {element} has not been found in the list')
+            break
+        else:
+            print(f'any occurence of {element} is to the right of position {sorted_list[midway]} in the list')
+            #delete the left half of the list
+            del(sorted_list[:midway])
+            print(f'Deleted the left half of the list, new list is: {sorted_list}')
+            #find the new midway
+            midway = middleOfList(sorted_list)
+
+    print(f'an occurence of {element} is at position {sorted_list[midway]} in the list')
+
+
+findAnyOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 4)
 
 
 # def maximumSubarrayProblem():
