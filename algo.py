@@ -30,19 +30,17 @@ def verifyPrime(candidate):
 #verifyPrime(11233)
 #verifyPrime(33216)
 
-
+# O(n)
 def fibonacciSequence(sequence_length):
-    example = [1,1,2,3,5,8,13,21,34,55,89,144,233]
-    print(f'{example} is our test sequence')
-    fibonacci = []
-    for x in range(0, sequence_length):
+    fibonacci = [0]
+    for x in range(1, sequence_length):
         if len(fibonacci) < 2:
             fibonacci.append(1)
         else:
             fibonacci.append(fibonacci[x-1] + fibonacci[x-2])
     print(fibonacci)
 
-
+print('[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233] is our test sequence')
 fibonacciSequence(23)
 
 
