@@ -28,7 +28,7 @@ def verifyPrime(candidate):
 
 
 #verifyPrime(11233)
-#verifyPrime(33216)
+#verifyPrime(17321)
 
 # O(n)
 def fibonacciSequence(sequence_length):
@@ -61,7 +61,7 @@ def findElementCount(sorted_list, element):
 def middleOfList(list):
     return math.floor(len(list)/2)
 
-#now lets use binary search to find first occurence of element in the sorted list
+#now lets use binary search to find any occurence of element in the sorted list
 def findAnyOccurence(sorted_list, element):
     print(sorted_list)
     midway = middleOfList(sorted_list)
@@ -87,7 +87,44 @@ def findAnyOccurence(sorted_list, element):
     print(f'an occurence of {element} is at position {sorted_list[midway]} in the list')
 
 
-findAnyOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 4)
+#findAnyOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 4)
+
+
+#now lets use binary search to find first occurence of element in the sorted list
+def findFirstOccurence(sorted_list, element):
+    print(sorted_list)
+    midway = middleOfList(sorted_list)
+    while True:
+        if sorted_list[midway] > element:
+            print(f'First occurence of {element} is to the left of position {sorted_list[midway]} in the list')
+            #delete the right half of the list
+            del(sorted_list[midway:])
+            print(f'Deleted the right half of the list, new list is: {sorted_list}')
+            #find the new midway
+            midway = middleOfList(sorted_list)
+        elif len(sorted_list) == 1:
+            print(f'Element {element} has not been found in the list')
+            break
+        elif sorted_list[midway] == element:
+            print(f'an occurence of {element} is at position {sorted_list[midway]} in the list')
+            #delete the right half of the list
+            del(sorted_list[midway:])
+            print(f'Deleted the right half of the list, new list is: {sorted_list}')
+            #find the new midway
+            midway = middleOfList(sorted_list)
+        elif sorted_list[-1] == element and sorted_list[-2] != element:
+            print(f'First occurence of {element} is at position {len(sorted_list)-1} in the list')
+            break
+        else:
+            print(f'First occurence of {element} is to the right of position {sorted_list[midway]} in the list')
+            #delete the left half of the list
+            del(sorted_list[:midway])
+            print(f'Deleted the left half of the list, new list is: {sorted_list}')
+            #find the new midway
+            midway = middleOfList(sorted_list)
+
+
+findFirstOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 3)
 
 
 # def maximumSubarrayProblem():
