@@ -124,7 +124,43 @@ def findFirstOccurence(sorted_list, element):
             midway = middleOfList(sorted_list)
 
 
-findFirstOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 3)
+#findFirstOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 3)
+
+
+def findLastOccurence(sorted_list, element):
+    print(sorted_list)
+    midway = middleOfList(sorted_list)
+    while True:
+        if sorted_list[midway] > element:
+            print(f'Last occurence of {element} is to the left of position {sorted_list[midway]} in the list')
+            #delete the right half of the list
+            del(sorted_list[midway:])
+            print(f'Deleted the right half of the list, new list is: {sorted_list}')
+            #find the new midway
+            midway = middleOfList(sorted_list)
+        elif len(sorted_list) == 1:
+            print(f'Element {element} has not been found in the list')
+            break
+        elif sorted_list[midway] == element:
+            print(f'an occurence of {element} is at position {sorted_list[midway]} in the list')
+            #delete the left half of the list
+            del(sorted_list[:midway])
+            print(f'Deleted the left half of the list, new list is: {sorted_list}')
+            #find the new midway
+            midway = middleOfList(sorted_list)
+        elif sorted_list[0] == element and sorted_list[1] != element:
+            print(f'Last occurence of {element} is at position {len(sorted_list)-1} in the list')
+            break
+        else:
+            print(f'Last occurence of {element} is to the right of position {sorted_list[midway]} in the list')
+            #delete the left half of the list
+            del(sorted_list[:midway])
+            print(f'Deleted the left half of the list, new list is: {sorted_list}')
+            #find the new midway
+            midway = middleOfList(sorted_list)
+
+
+findLastOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 3)
 
 
 # def maximumSubarrayProblem():
