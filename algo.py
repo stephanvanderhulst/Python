@@ -160,7 +160,32 @@ def findLastOccurence(sorted_list, element):
             midway = middleOfList(sorted_list)
 
 
-findLastOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 3)
+#findLastOccurence([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 3)
+#eventually I want a function that will take an array en I can request any occurence, first occurence, last occurence or the count of element
+
+#mycodeschool implementation of firstoccurence and lastoccurence:
+def binarySearch(list, element):
+    listLength = len(list)
+    low = 0
+    high = listLength
+    result = -1
+    while(low <= high):
+        mid = (low+high)/2
+        if element == list[middleOfList(list)]:
+            result = middleOfList(list)
+            high = middleOfList(list)-1 #this becomes low = middleOfList(list)+1 if we want last occurence
+        elif element == list[middleOfList(list)]:
+            high = middleOfList(list)-1
+        else:
+            low = middleOfList(list)+1
+    print(result)
+
+#Nice video! I would suggest calculating 'mid' index this way:
+#min <- low + (high - low) / 2
+#to avoid integer overflow on large arrays.﻿
+
+#this currently is an endless loop
+#binarySearch([1, 1, 3, 3, 5, 5, 5, 5, 5, 9, 9, 11], 3)
 
 
 # def maximumSubarrayProblem():
