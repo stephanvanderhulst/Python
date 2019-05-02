@@ -54,7 +54,7 @@ def fibonacciNumber(position):
         nums[i] = nums[i-1] + nums[i-2]
     return nums[position]
 
-print(fibonacciNumber(5))
+#print(fibonacciNumber(5))
 
 
 #Find count of an element in a sorted list: O(n) solution
@@ -236,10 +236,27 @@ def fizz_buzz(game_length):
 
 #fizz_buzz(30)
 
-total_numbers = 0
 
-for number in range(1,10):
-    if number %2 == 0:
-        print(number)
-        total_numbers += 1
-print(f"We have {total_numbers} even numbers")
+#Kadane's algorithm
+def max_sub_array(input_list):
+    curr = 0
+    current_sum = 0
+    max_start, max_stop = 0, 1
+    max_sum = input_list[0]
+
+    for i, list_item in enumerate(input_list):
+        current_sum +=  list_item
+
+        if current_sum > max_sum: #Doing great! Let's keep going
+            max_sum = current_sum
+            max_start = curr #Only changes if previous search was abandoned
+            max_stop = i  + 1
+        if current_sum < 0: #Start a new search because the sum of current subarray is smaller than zero
+            current_sum = 0
+            curr = i + 1 #New search starts from next element
+
+    return  max_sum , input_list[max_start:max_stop]
+
+
+print(max_sub_array([-2,1,-3,4,-1,2,1,-5,4]))
+print(max_sub_array([8, 2, -5, -5,-5,-5, 4, 7]))
