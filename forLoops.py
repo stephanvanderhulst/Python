@@ -20,7 +20,7 @@ for i in list:
 print(largest_number)
 
 #remove duplicate numbers from a list
-numbers = [4,4,3,12,7,5,2,7]
+numbers = [4,4,4,3,12,7,5,2,7]
 print(numbers)
 for i in numbers:
     if numbers.count(i) > 1:

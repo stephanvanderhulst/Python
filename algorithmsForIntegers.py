@@ -44,6 +44,19 @@ def fibonacciSequence(sequence_length):
 #fibonacciSequence(23)
 
 
+#now a function that gives the fibonacci number at a certain position
+def fibonacciNumber(position):
+    if position == 0 or position == 1: return 1
+    nums = position+1
+    nums[0] = 1
+    nums[1] = 1
+    for i in range[2:position]:
+        nums[i] = nums[i-1] + nums[i-2]
+    return nums[position]
+
+print(fibonacciNumber(5))
+
+
 #Find count of an element in a sorted list: O(n) solution
 def findElementCount(sorted_list, element):
     count = 0
@@ -222,3 +235,11 @@ def fizz_buzz(game_length):
 
 
 #fizz_buzz(30)
+
+total_numbers = 0
+
+for number in range(1,10):
+    if number %2 == 0:
+        print(number)
+        total_numbers += 1
+print(f"We have {total_numbers} even numbers")
