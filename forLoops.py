@@ -3,13 +3,13 @@ ninjas = ['ryu','crystal','yoshi','ken']
 
 #for ninja in ninjas[1:3]:
 #    print(ninja)
-
-for ninja in ninjas:
+#Enumerate can be given a start number!
+for index, ninja in enumerate(ninjas, start=1):
     if ninja == "yoshi":
-        print(f'{ninja} - he is a black belt')
+        print(f'Number {index}: {ninja} - he is a black belt')
         break
     else:
-        print(ninja)
+        print(f'Number {index}: {ninja}')
 
 #find largest number in a list
 list = [0,12,300,33,77,8]

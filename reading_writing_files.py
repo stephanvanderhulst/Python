@@ -22,7 +22,8 @@ print('*******************************************************************')
 def filter_line(line):
     return 'olo' not in line
 
-#lets look at a different way of accessing the file
+#lets look at a better/different way of accessing the file
+#We dont have to close the file, Python does that for us
 with open('ipsum.txt') as ipsum_file:
     lines = ipsum_file.readlines()
     print(list(filter(filter_line, lines)))
