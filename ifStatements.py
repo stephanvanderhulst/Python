@@ -16,10 +16,10 @@ else:
 
 
 good_credit = False
-house_price = 1000000
+house_price = 1_000_000
 
 if good_credit:
     down_payment = house_price * 0.1
 else:
     down_payment = house_price * 0.2
-print(f'The down payment is: {down_payment}')
+print(f'The down payment is: {down_payment:,}')
