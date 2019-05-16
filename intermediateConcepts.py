@@ -67,3 +67,15 @@ for i in range(10**3):
     if (i%10, int((i/10)%10), int((i/10**2)%10)) == combo:
         print(f'found combo: {i%10, int((i/10)%10), int((i/10**2)%10)}')
         break
+
+
+#python ternary operators
+greeting="Hello" #to reverse it you can slice it with step -1
+print(greeting[::-1])
+
+
+#tuple unpacking:
+greeting="Hello there"
+firstword, secondword = greeting.split(" ")
+print(firstword)
+print(secondword)

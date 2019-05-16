@@ -260,3 +260,19 @@ def max_sub_array(input_list):
 
 print(max_sub_array([-2,1,-3,4,-1,2,1,-5,4]))
 print(max_sub_array([8, 2, -5, -5,-5,-5, 4, 7]))
+
+
+
+#Longest non-decreasing subsequence
+[-1,3,4,5,2,2,2,2]
+#longest decreasing subsequence
+#longest increasing subsequence
+
+
+#Find the second largest element in an array
+[-1,10,8,9,10,9,-8,11]
+#Theres also Nth element where we cant use variables
+
+
+#Search a sorted array for first occurence of K
+[1,3,7,28,123,155,201] k=3
