@@ -2,6 +2,10 @@
 xyz = [i for i in range(5)]
 print(xyz)
 
+#double every item in the list
+double_xyz = [item * 2 for item in xyz]
+print(double_xyz)
+
 
 #generator expression
 xyz = (i for i in range(5))
